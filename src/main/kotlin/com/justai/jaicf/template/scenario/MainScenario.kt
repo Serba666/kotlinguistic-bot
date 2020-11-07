@@ -1,6 +1,7 @@
 package com.justai.jaicf.template.scenario
 
 import com.justai.jaicf.activator.caila.caila
+import com.justai.jaicf.channel.googleactions.actions
 import com.justai.jaicf.model.scenario.Scenario
 import com.justai.jaicf.template.scenario.PetrPig
 
@@ -14,16 +15,9 @@ object MainScenario : Scenario() {
             }
             action {
                 reactions.run {
-                    image("https://media.giphy.com/media/ICOgUNjpvO0PC/source.gif")
-                    sayRandom(
-                        "Hello! How can I help?",
-                        "Hi there! How can I help you?"
-                    )
-                    buttons(
-                        "Help me!",
-                        "How are you?",
-                        "What is your name?"
-                    )
+                    say("Приветствую тебя, мой дорогой путешественник!")
+                    say("Я помогу определиться с направлением путешествия в зависимости от количества деревянных в твоём кармане.")
+                    say("Итак, какой суммой располагаешь?")
                 }
             }
         }
@@ -34,11 +28,10 @@ object MainScenario : Scenario() {
             }
 
             action {
-                reactions.sayRandom(
-                    "See you soon!",
-                    "Bye-bye!"
-                )
-                reactions.image("https://media.giphy.com/media/EE185t7OeMbTy/source.gif")
+                reactions.run {
+                    say("Пока-пока!")
+                    actions?.endConversation()
+                }
             }
         }
 
@@ -55,10 +48,7 @@ object MainScenario : Scenario() {
         }
 
         fallback {
-            reactions.sayRandom(
-                "Sorry, I didn't get that...",
-                "Sorry, could you repeat please?"
-            )
+            reactions.say("Извините, я на тракторе, вас плохо слышно. Полетим куда-нибудь?")
         }
     }
 }
