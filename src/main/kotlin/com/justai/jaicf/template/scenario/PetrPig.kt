@@ -2,28 +2,19 @@ package com.justai.jaicf.template.scenario
 
 import com.justai.jaicf.activator.caila.caila
 import com.justai.jaicf.model.scenario.Scenario
-import com.justai.jaicf.template.scenario.PetrPig
 
-object MainScenario : Scenario() {
+object PetrPig : Scenario() {
 
     init {
-        state("start") {
+        state("Petr") {
             activators {
-                regex("/start")
-                intent("Hello")
+                regex("pig")
             }
             action {
                 reactions.run {
-                    image("https://media.giphy.com/media/ICOgUNjpvO0PC/source.gif")
-                    sayRandom(
-                        "Hello! How can I help?",
-                        "Hi there! How can I help you?"
-                    )
-                    buttons(
-                        "Help me!",
-                        "How are you?",
-                        "What is your name?"
-                    )
+                    image("http://s02.yapfiles.ru/files/15392/Zak_petri.gif")
+                    say("Приветствую тебя, мой дорогой путешественник! Я помогу определиться с направлением путешествия в зависимости от количества деревянных в твоём кармане.")
+                    say("Итак, какой суммой располагаешь?")
                 }
             }
         }
@@ -35,8 +26,8 @@ object MainScenario : Scenario() {
 
             action {
                 reactions.sayRandom(
-                    "See you soon!",
-                    "Bye-bye!"
+                    "See you soon! хрю",
+                    "Bye-bye! хрю"
                 )
                 reactions.image("https://media.giphy.com/media/EE185t7OeMbTy/source.gif")
             }
@@ -56,8 +47,8 @@ object MainScenario : Scenario() {
 
         fallback {
             reactions.sayRandom(
-                "Sorry, I didn't get that...",
-                "Sorry, could you repeat please?"
+                "хрю Sorry, I didn't get that...",
+                "хрю Sorry, could you repeat please?"
             )
         }
     }
