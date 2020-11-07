@@ -18,38 +18,5 @@ object PetrPig : Scenario() {
                 }
             }
         }
-
-        state("bye") {
-            activators {
-                intent("Bye")
-            }
-
-            action {
-                reactions.sayRandom(
-                    "See you soon! хрю",
-                    "Bye-bye! хрю"
-                )
-                reactions.image("https://media.giphy.com/media/EE185t7OeMbTy/source.gif")
-            }
-        }
-
-        state("smalltalk", noContext = true) {
-            activators {
-                anyIntent()
-            }
-
-            action {
-                activator.caila?.topIntent?.answer?.let {
-                    reactions.say(it)
-                }
-            }
-        }
-
-        fallback {
-            reactions.sayRandom(
-                "хрю Sorry, I didn't get that...",
-                "хрю Sorry, could you repeat please?"
-            )
-        }
     }
 }

@@ -3,9 +3,10 @@ package com.justai.jaicf.template.scenario
 import com.justai.jaicf.activator.caila.caila
 import com.justai.jaicf.channel.googleactions.actions
 import com.justai.jaicf.model.scenario.Scenario
-import com.justai.jaicf.template.scenario.PetrPig
 
-object MainScenario : Scenario() {
+object MainScenario : Scenario(
+    dependencies = listOf(PetrPig)
+) {
 
     init {
         state("start") {
