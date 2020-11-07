@@ -13,13 +13,9 @@ object MainScenario : Scenario() {
             }
             action {
                 reactions.run {
-                    image("https://media.giphy.com/media/ICOgUNjpvO0PC/source.gif")
+                    image("http://s02.yapfiles.ru/files/15392/Zak_petri.gif")
                     say("Приветствую тебя, мой дорогой путешественник! Я помогу определиться с направлением путешествия в зависимости от количества деревянных в твоём кармане.")
-                    buttons(
-                        "Help me!",
-                        "How are you?",
-                        "What is your name?"
-                    )
+                    say("Итак, какой суммой располагаешь?")
                 }
             }
         }
@@ -34,7 +30,6 @@ object MainScenario : Scenario() {
                     "See you soon!",
                     "Bye-bye!"
                 )
-                reactions.image("https://media.giphy.com/media/EE185t7OeMbTy/source.gif")
             }
         }
 
@@ -51,10 +46,7 @@ object MainScenario : Scenario() {
         }
 
         fallback {
-            reactions.sayRandom(
-                "Sorry, I didn't get that...",
-                "Sorry, could you repeat please?"
-            )
+            reactions.say("Извините, я на тракторе, вас плохо слышно. Полетим куда-нибудь?")
         }
     }
 }
