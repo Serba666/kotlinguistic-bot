@@ -14,10 +14,7 @@ object MainScenario : Scenario() {
             action {
                 reactions.run {
                     image("https://media.giphy.com/media/ICOgUNjpvO0PC/source.gif")
-                    sayRandom(
-                        "Hello! How can I help?",
-                        "Hi there! How can I help you?"
-                    )
+                    say("Приветствую тебя, мой дорогой путешественник! Я помогу определиться с направлением путешествия в зависимости от количества деревянных в твоём кармане.")
                     buttons(
                         "Help me!",
                         "How are you?",
